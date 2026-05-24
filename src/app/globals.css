@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  @apply m-0 p-0 box-border;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-background text-dark-primary font-sans antialiased;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  @apply w-2 h-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-dark-secondary;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-dark-700 rounded-full hover:bg-primary/50 transition-colors;
+}
+
+/* Text Selection */
+::selection {
+  @apply bg-primary/30 text-dark-primary;
+}
+
+/* Focus Styles */
+:focus-visible {
+  @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    @apply opacity-0;
+  }
+  to {
+    @apply opacity-100;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    @apply translate-y-4 opacity-0;
+  }
+  to {
+    @apply translate-y-0 opacity-100;
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    @apply -translate-y-4 opacity-0;
+  }
+  to {
+    @apply translate-y-0 opacity-100;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    @apply -translate-x-4 opacity-0;
+  }
+  to {
+    @apply translate-x-0 opacity-100;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    @apply translate-x-4 opacity-0;
+  }
+  to {
+    @apply translate-x-0 opacity-100;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    @apply opacity-100;
+  }
+  50% {
+    @apply opacity-50;
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    @apply translate-y-0;
+  }
+  50% {
+    @apply -translate-y-1;
+  }
+}
+
+/* Utility Classes */
+.text-gradient {
+  @apply bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent;
+}
+
+.glass {
+  @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-lg;
+}
+
+.glow {
+  @apply shadow-lg shadow-primary/20;
+}
+
+.card-shadow {
+  @apply shadow-sm shadow-black/20;
+}
+
+/* Form Styles */
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='search'],
+textarea,
+select {
+  @apply w-full px-4 py-2 rounded-lg border border-dark-700 bg-dark-secondary text-dark-primary transition-all focus:border-primary focus:ring-1 focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50;
+}
+
+input::placeholder,
+textarea::placeholder {
+  @apply text-dark-secondary/50;
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+  @apply w-4 h-4 rounded border-dark-700 bg-dark-secondary text-primary cursor-pointer focus:ring-primary;
+}
+
+/* Loading Spinner */
+.spinner {
+  @apply inline-block w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin;
+}
+
+/* Smooth Transitions */
+.transition-smooth {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+/* Placeholder Animations */
+@layer components {
+  .fade-in {
+    @apply animate-fade-in;
+  }
+
+  .slide-in-up {
+    @apply animate-slide-in-up;
+  }
+
+  .slide-in-down {
+    @apply animate-slide-in-down;
+  }
+
+  .slide-in-left {
+    @apply animate-slide-in-left;
+  }
+
+  .slide-in-right {
+    @apply animate-slide-in-right;
+  }
+}
